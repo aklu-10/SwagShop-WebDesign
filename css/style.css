@@ -1,0 +1,575 @@
+:root
+{
+    --primary:#222629; 
+    --secondary:#FEDA6A;
+    --tertiary:#3B3C3D;
+    --lightgrey:#A7A9AA;
+    --grey:#8B8B8C;
+    --dark:#191919;
+} 
+
+::-webkit-scrollbar
+{
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: #3B3C3D;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+body
+{
+    min-height: 100vh;
+    background-image: linear-gradient(145deg, var(--primary),var(--tertiary));
+}
+
+header
+{
+    position: sticky;
+    top:0px;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 10vh;
+    padding: 0 80px;
+    transition: .2s ease;
+}
+
+header .logo
+{
+    display: flex;
+    align-items: center;
+}
+
+header .logo i
+{
+    display: none;
+    color:#A7A9AA;
+}
+
+
+header .logo h2
+{
+    margin-left: 10px;
+}
+
+
+header h2
+{
+    color:var(--secondary);
+}
+
+header h2 span
+{
+    color:var(--grey);
+}
+
+header nav
+{
+    flex-basis: 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 5;
+}
+
+header nav a
+{
+    text-decoration: none;
+    color:var(--grey);
+}
+
+header .menu i
+{
+    display: none;
+    font-size: 2rem;
+}
+
+header .searchbar
+{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    width:200px;
+}
+
+header .searchbar input
+{
+    width:75%;
+    height: 30px;
+    background-color: var(--lightgrey);
+    color:white;
+    padding-left: 10px;
+    border:none;
+    border-radius: 0;
+}
+
+header .searchbar input::placeholder
+{
+    color:white;
+}
+
+header.active
+{
+    background-color: #efefef;
+}
+
+header.active .logo i
+{
+    color:#191919;
+}
+ 
+
+header .searchbar button
+{
+    width:25%;
+    height: 30px;
+    border:1px solid var(--lightgrey);
+    border-radius: 0;
+}
+
+
+
+main .hero
+{
+    min-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .hero .hero_content
+{
+    width:100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-bottom: 200px;
+}
+
+
+main .hero .hero_content h1
+{
+    font-size:clamp(4rem,2.6rem,3rem);
+    color:var(--lightgrey);
+    text-align: center;
+
+}
+
+main .hero .hero_content img
+{
+    position: absolute;
+    width:30%;
+}
+
+main .hero .downarrow
+{
+    cursor: pointer;
+    width:30px;
+    height:30px;
+    position: absolute;
+    bottom:4%;
+    border:2px solid lightgray;
+    border-left:none;
+    border-bottom:none;
+    transform: rotate(135deg);
+    animation:downmotion 2s linear infinite;
+}
+
+.btn
+{
+    border:none;
+    padding: 10px 30px;
+    border-radius:100px;
+    background-color: var(--lightgrey);
+    color:#191919;
+    font-weight: 600;
+}
+
+
+@keyframes downmotion
+{
+    50%
+    {
+        bottom:3%;
+    }    
+}
+
+.services
+{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 85% 15%;
+    margin-bottom: 80px;
+
+}
+
+.services .product_category
+{
+    height: 100%;    
+    gap:10px;
+    font-size: clamp(1rem,2.5rem,2rem);
+    color: #8B8B8C;
+}
+
+.services .product_category .slider
+{
+    width:100%;
+    height: 40%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.services .product_category .slider .content h1:nth-child(2)
+{
+    font-weight: lighter;
+}
+
+
+.services .product_category .all_category .men_content,
+.services .product_category .all_category .women_content,
+.services .product_category .all_category .kid_content,
+.services .product_category .all_category .kido_content
+{
+    position: relative;
+}
+
+
+
+.services .product_category .all_category
+{
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.services .product_category .all_category .category
+{
+    min-width:24%;
+    height: 80%;
+    margin: 1px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:4.2vmin;
+}
+
+.services .product_category .all_category .category:hover
+{
+    transform: scale(.9);
+}
+
+
+.services .product_category .slider img,
+.services .product_category .all_category .category img
+{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top:0;
+    z-index: -1;
+
+}
+
+
+.services .showmore
+{
+    display: grid;
+    place-items: center;
+    
+}
+
+main .products_showcase
+{
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+}
+
+main h1
+{   
+    padding-left: 20px;
+    font-weight: 400;
+    color: var(--lightgrey);
+    margin: 40px 0 ;
+}
+
+main p
+{
+    padding-left: 20px;
+    font-weight: 100;
+    font-size: 1rem;
+    color: var(--lightgrey);
+    text-align: left;
+}
+
+main .products_showcase .images
+{
+    width:100%;
+    min-height: 45vh;
+    display: flex;
+    overflow-x: visible;
+    overflow-x: hidden;
+    position: relative;
+}
+
+main .products_showcase .images .allslides
+{
+    display: flex;
+    width: 200vw;
+    transition: .2s ease;
+}
+
+main .products_showcase .images .arrow
+{
+    position: absolute;
+    top:20%;
+    font-size: 25px;
+    color:var(--lightgrey);
+    padding: 20px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 2;
+    background-image: linear-gradient(90deg, #333537 70%,transparent );
+    backdrop-filter: blur(20px);
+}
+
+main .products_showcase .images .arrow.leftarrow
+{
+    left:15px;
+}
+
+main .products_showcase .images .arrow.rightarrow
+{
+    right:15px;
+    background-image: linear-gradient(-90deg, #333537 70% ,transparent );
+
+}
+
+main .products_showcase .images .slide
+{
+    display: flex;
+    flex-direction: column;
+    width:520px;
+    height: 200px;
+    text-align: center;
+}
+
+main .products_showcase .images .slide a
+{
+    width:100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+
+main .products_showcase .images .slide h3
+{
+    margin-top: 15px;
+    font-weight: 100;
+}
+
+
+main .products_showcase .images .slide img
+{
+    width:100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+main .products_showcase .images .slide h3
+{
+    font-size: 1rem;
+    font-weight: 400;
+    color:var(--lightgrey);
+}
+
+main .sales_banner img
+{   
+    width: 100%;
+}
+
+main .about
+{
+    margin: 20px 0;
+}
+
+main .about .social_links i
+{
+    margin: 2% 0;
+    padding-left: 20px;
+    font-size: 1.2rem;
+    color:white;
+}
+
+footer
+{
+    margin: 60px 0 0px;
+    background-color: #191919;
+
+}
+
+footer .container
+{
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .container .footer_box
+{
+    width:25%;
+    height: 250px;
+    padding: 20px;    
+    text-align: center;
+}
+
+footer .container .footer_box h3
+{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color:var(--grey);
+    padding: 20px 0;
+}
+
+footer .container .footer_box a
+{
+    color:rgba(255,255,255,0.3);
+    text-decoration: none;
+    font-size:.8rem;
+}
+
+footer p
+{
+    text-align: center;
+    color:var(--lightgrey);
+    padding:20px 0;
+}
+
+@media (max-width:900px)
+{
+
+    html
+    {
+        font-size:90%;
+    }
+
+    header .searchbar 
+    {
+        width:160px;
+    }
+
+    header 
+    {
+        padding: 0 10px;
+    }
+
+    header nav
+    {
+        position: absolute;
+        top:0;
+        left:0;
+        height: 100vh;
+        width:60vw;
+        display: flex;
+        flex-direction: column;
+        background-color: #3B3C3D;
+        overflow: hidden;
+        transition: .2s ease;
+    }
+
+    header nav a
+    {
+        color:#8B8B8C;
+    }
+
+  
+
+    header .logo i
+    {
+        font-size: 2rem;
+    }
+    
+    header i
+    {
+        display: block !important;
+        cursor: pointer;
+    }
+
+    main .hero .hero_content h1
+    {
+        font-size:3rem;
+    }
+    main .hero .hero_content img
+    {
+        width:40%;
+    }
+
+    main .services .product_category .category
+    {
+        grid-column: span 2;
+    }
+
+    .services .product_category .all_category .category
+    {
+        flex-basis: 49%;
+        height: 50%;
+    }
+    footer .container .footer_box
+    {
+        width:50%;
+    }
+
+}
+
+@media (max-width:500px)
+{
+
+
+    main .hero .hero_content h1
+    {
+        font-size:3.3rem;
+    }
+    main .hero .hero_content img
+    {
+        width:60%;
+    }
+
+    main .products_showcase .allslides
+    {
+        min-width:400vw;
+    }
+    
+    footer .container .footer_box
+    {
+        width:100%;
+    }
+}
